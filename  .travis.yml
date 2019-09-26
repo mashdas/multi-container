@@ -2,17 +2,17 @@ language: generic
 
 sudo: required
 
-services:
+services: 
   - docker
 
-before_install:
+before_install: 
   - docker build -t rtest -f ./client/Dockerfile.dev  ./client
 
-script:
+script: 
   - sudo docker run -e CI=true rtest npm run test
 
 
-after_success:
+after_success: 
   - sudo docker build -t multi-client ./client
   - sudo docker build -t multi-nginx ./nginx  
   - sudo docker build -t multi-worker ./worker
@@ -27,3 +27,4 @@ after_success:
 - docker push multi-nginx
 - docker push multi-worker
 - docker push multi-server
+
