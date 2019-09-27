@@ -23,8 +23,8 @@ after_success:
 
 #Pushing the images to docker hub
 
- - docker push xlr99/multi-client
- - docker push xlr99/multi-nginx
- - docker push xlr99/multi-worker
- - docker push xlr99/multi-server
+ - sudo docker push xlr99/multi-client
+ - sudo docker push xlr99/multi-nginx
+ - sudo docker push xlr99/multi-worker
+ - sudo docker push xlr99/multi-server
 
