@@ -13,18 +13,18 @@ script:
 
 
 after_success: 
- - sudo docker build -t multi-client ./client
- - sudo docker build -t multi-nginx ./nginx  
- - sudo docker build -t multi-worker ./worker
- - sudo docker build -t multi-server ./server
+ - sudo docker build -t xlr99/multi-client ./client
+ - sudo docker build -t xlr99/multi-nginx ./nginx  
+ - sudo docker build -t xlr99/multi-worker ./worker
+ - sudo docker build -t xlr99/multi-server ./server
 
 #Logging into docker hub
  - sudo echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin  
 
 #Pushing the images to docker hub
 
- - docker push multi-client
- - docker push multi-nginx
- - docker push multi-worker
- - docker push multi-server
+ - docker push xlr99/multi-client
+ - docker push xlr99/multi-nginx
+ - docker push xlr99/multi-worker
+ - docker push xlr99/multi-server
 
